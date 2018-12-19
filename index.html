@@ -67,6 +67,48 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-数据库-悲观锁和乐观锁" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/20/数据库-悲观锁和乐观锁/" class="article-date">
+  <time datetime="2018-12-19T17:05:25.000Z" itemprop="datePublished">2018-12-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/20/数据库-悲观锁和乐观锁/">数据库-悲观锁和乐观锁</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一、乐观锁（在更新操作之前先进行数据的读取，如果在修改数据的时候发现数据已经被别的操作修改了，则抛出错误，否则执行成功）<br>假设我们有一个用户表user，它有三个字段:id、money、version，那么我们根据id来给money增加20值的一个乐观锁的实现步骤是这样的:<br>第一步，首先我们得到version值:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select version from user where id = #&#123;id&#125;</span><br></pre></td></tr></table></figure></p>
+<p>。即我们首先得到当前的版本号。<br>第二步，然后我们执行更新操作:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> money = money + <span class="number">20</span>, <span class="keyword">version</span> = <span class="keyword">version</span> + <span class="number">1</span> <span class="keyword">where</span> <span class="keyword">id</span> = <span class="comment">#&#123;id&#125; and version = #&#123;version&#125;，这里一定要带上版本信息，只有在它改之前没有被修改才能确保操作成功。</span></span><br></pre></td></tr></table></figure></p>
+<p>如果修改行数为0，说明别的更新操作把版本数version加上去了，我们需要重新读取version信息，重新执行更新操作。</p>
+<p>二、悲观锁（在读取的时候就加上独占锁）<br>假设我们有一个用户表user，它有两个字段:id、money，假设某个用户的money大于200，我们会用它减去200，这里我们在整个事务中需要给这个数据加独占锁，以避免两个事务都读取到money的值大于200，但是最后都减去200后，得到负数的情况。<br>第一步，首先我们给当前用户加锁:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> money <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> <span class="keyword">id</span> = <span class="comment">#&#123;id&#125; for update，即我们首先获取到用户的金额，即我们需要确保它是有足够的钱消费的。</span></span><br></pre></td></tr></table></figure></p>
+<p>第二步，然后我们用这个值减去200:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> money = money - <span class="number">200</span> <span class="keyword">where</span> <span class="keyword">id</span> = <span class="comment">#&#123;id&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>，然后在事务结束后，我们就完成了整个操作。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.rxjava.org/2018/12/20/数据库-悲观锁和乐观锁/" data-id="cjpvfkdyn00033tgb84zoojed" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-temp-file" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/12/20/temp-file/" class="article-date">
@@ -93,7 +135,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.rxjava.org/2018/12/20/temp-file/" data-id="cjpvfbfvw000132gb56bs4us4" class="article-share-link">Share</a>
+      <a data-url="https://blog.rxjava.org/2018/12/20/temp-file/" data-id="cjpvfkdyl00013tgbs92jxggo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -131,7 +173,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.rxjava.org/2018/12/20/with-note/" data-id="cjpvfbfvy000232gbsfc0qr1x" class="article-share-link">Share</a>
+      <a data-url="https://blog.rxjava.org/2018/12/20/with-note/" data-id="cjpvfkdyn00023tgbsn29b7ta" class="article-share-link">Share</a>
       
       
     </footer>
@@ -176,7 +218,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.rxjava.org/2018/12/05/hello-world/" data-id="cjpvfbfvs000032gbwttez3nn" class="article-share-link">Share</a>
+      <a data-url="https://blog.rxjava.org/2018/12/05/hello-world/" data-id="cjpvfkdyi00003tgb0l8jg8kb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -215,6 +257,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/12/20/数据库-悲观锁和乐观锁/">数据库-悲观锁和乐观锁</a>
+          </li>
         
           <li>
             <a href="/2018/12/20/temp-file/">创建临时文件</a>

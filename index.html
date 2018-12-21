@@ -297,6 +297,159 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.rxjava.org/2018/12/21/weixin-share/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Happy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="RxJava小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/12/21/weixin-share/" class="post-title-link" itemprop="https://www.rxjava.org/index.html">微信分享接口测试</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-21 14:08:32 / 修改时间：14:12:45" itemprop="dateCreated datePublished" datetime="2018-12-21T14:08:32+08:00">2018-12-21</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>说明一：引入的相关类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.databind.JsonNode;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.codec.digest.DigestUtils;</span><br><span class="line"><span class="keyword">import</span> org.forkjoin.scrat.common.ErrorMessageException;</span><br><span class="line"><span class="keyword">import</span> org.junit.Before;</span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.junit4.SpringRunner;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.reactive.function.client.WebClient;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.util.UriComponentsBuilder;</span><br><span class="line"><span class="keyword">import</span> reactor.core.publisher.Mono;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">import</span> java.util.stream.Collectors;</span><br></pre></td></tr></table></figure>
+<p>说明二：使用的Spring webClient进行的网络请求</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> WebClient webClient;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Before</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    webClient = WebClient.builder().build();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>一、获取access_token</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 第一步：appid和secret换取AccessToken</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Mono&lt;String&gt; <span class="title">getAccessToken</span><span class="params">(String appid, String secret)</span> </span>&#123;</span><br><span class="line">    String accessTokenUrl = UriComponentsBuilder</span><br><span class="line">            .fromUriString(<span class="string">"https://api.weixin.qq.com"</span>)</span><br><span class="line">            .path(<span class="string">"/cgi-bin/token?grant_type=client_credential&amp;appid="</span> + appid + <span class="string">"&amp;secret="</span> + secret)</span><br><span class="line">            .build().toUriString();</span><br><span class="line">    <span class="keyword">return</span> webClient.get()</span><br><span class="line">            .uri(accessTokenUrl)</span><br><span class="line">            .retrieve()</span><br><span class="line">            .bodyToMono(JsonNode.class)</span><br><span class="line">            .map(jsonNode -&gt; &#123;</span><br><span class="line">                JsonNode errcode = jsonNode.get(<span class="string">"errcode"</span>);</span><br><span class="line">                <span class="keyword">if</span> (errcode != <span class="keyword">null</span>) &#123;</span><br><span class="line">                    <span class="keyword">throw</span> ErrorMessageException.of(jsonNode.get(<span class="string">"errmsg"</span>).asText());</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> jsonNode;</span><br><span class="line">            &#125;)</span><br><span class="line">            .map(jsonNode -&gt; jsonNode</span><br><span class="line">                    .get(<span class="string">"access_token"</span>)</span><br><span class="line">                    .asText()</span><br><span class="line">            );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>二、获取jsapi_ticket</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 第二步：AccessToken换取JsapiTicket</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Mono&lt;String&gt; <span class="title">getJsapiTicket</span><span class="params">(String accessToken)</span> </span>&#123;</span><br><span class="line">    String jsapiTicketUrl = UriComponentsBuilder</span><br><span class="line">            .fromUriString(<span class="string">"https://api.weixin.qq.com"</span>)</span><br><span class="line">            .path(<span class="string">"/cgi-bin/ticket/getticket?access_token="</span> + accessToken + <span class="string">"&amp;type=jsapi"</span>)</span><br><span class="line">            .build().toUriString();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> webClient.get()</span><br><span class="line">            .uri(jsapiTicketUrl)</span><br><span class="line">            .retrieve()</span><br><span class="line">            .bodyToMono(JsonNode.class)</span><br><span class="line">            .map(jsonNode -&gt; &#123;</span><br><span class="line">                <span class="keyword">if</span> (!jsonNode.get(<span class="string">"errcode"</span>).asText().equals(<span class="string">"0"</span>)) &#123;</span><br><span class="line">                    <span class="keyword">throw</span> ErrorMessageException.of(jsonNode.get(<span class="string">"errmsg"</span>).asText());</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> jsonNode;</span><br><span class="line">            &#125;)</span><br><span class="line">            .map(jsonNode -&gt; jsonNode</span><br><span class="line">                    .get(<span class="string">"ticket"</span>)</span><br><span class="line">                    .asText()</span><br><span class="line">            );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>三、待签名参数按照字段名的ASCII 码从小到大排序（字典序）使用URL键值对的格式（即key1=value1&amp;key2=value2…）拼接成字符串</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 第三步：ASCII 码从小到大排序（字典序）并组装键值对格式</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> String <span class="title">getSignToken</span><span class="params">(Map&lt;String, String&gt; map)</span> </span>&#123;</span><br><span class="line">    List&lt;Map.Entry&lt;String, String&gt;&gt; keyValueList = <span class="keyword">new</span> ArrayList&lt;&gt;(map.entrySet());</span><br><span class="line">    <span class="comment">// 对所有传入参数按照字段名的 ASCII 码从小到大排序（字典序）</span></span><br><span class="line">    keyValueList.sort(Comparator.comparing(Map.Entry::getKey));</span><br><span class="line">    <span class="comment">// 构造签名键值对的格式</span></span><br><span class="line">    <span class="keyword">return</span> keyValueList.stream()</span><br><span class="line">            .map(enty -&gt; enty.getKey() + <span class="string">"="</span> + enty.getValue())</span><br><span class="line">            .collect(Collectors.joining(<span class="string">"&amp;"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>四、对string进行sha1签名，得到signature</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMain</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    String noncestr = <span class="string">"zckkwiekaAERkqke"</span>;</span><br><span class="line">    <span class="keyword">long</span> timestamp = System.currentTimeMillis();</span><br><span class="line">    String url = <span class="string">"https://www.google.com"</span>;</span><br><span class="line">    String appid = <span class="string">"wx18029384838923d"</span>;<span class="comment">//假的，请自行填写自己的appid</span></span><br><span class="line">    String secret = <span class="string">"9kkeiekkdikdindiie82kndiidnnedie1"</span>;<span class="comment">//假的，请自行填写自己的secret</span></span><br><span class="line"></span><br><span class="line">    String signature = getAccessToken(appid, secret)</span><br><span class="line">            .flatMap(<span class="keyword">this</span>::getJsapiTicket)</span><br><span class="line">            .map(jsapiTicket -&gt; &#123;</span><br><span class="line">                Map&lt;String, String&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">                map.put(<span class="string">"noncestr"</span>, noncestr);</span><br><span class="line">                map.put(<span class="string">"jsapi_ticket"</span>, jsapiTicket);</span><br><span class="line">                map.put(<span class="string">"timestamp"</span>, String.valueOf(timestamp));</span><br><span class="line">                map.put(<span class="string">"url"</span>, url);</span><br><span class="line">                <span class="keyword">return</span> getSignToken(map);</span><br><span class="line">            &#125;)</span><br><span class="line">            .map(DigestUtils::sha1Hex)</span><br><span class="line">            .block();</span><br><span class="line">    System.out.println(signature);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.rxjava.org/2018/12/20/spring-validate-annotation/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1027,7 +1180,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

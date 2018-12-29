@@ -182,7 +182,7 @@
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
@@ -196,6 +196,7 @@
       
         <p class="site-subtitle">不和癞蛤蟆谈论大海的故事！</p>
       
+    
     
   </div>
 
@@ -297,6 +298,147 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.rxjava.org/2018/12/30/top-center-bottom/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Happy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="RxJava小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/12/30/top-center-bottom/" class="post-title-link" itemprop="url">上中下结构布局，中间滚动</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-30 00:00:28 / 修改时间：00:01:33" itemprop="dateCreated datePublished" datetime="2018-12-30T00:00:28+08:00">2018-12-30</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> &#123;<span class="comment">//FLEX容器，最高容器</span></span><br><span class="line">  <span class="attribute">padding-top</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">padding-bottom</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line"></span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#f4f4f4</span>;<span class="comment">//此颜色一般跟content中的背景色一致</span></span><br><span class="line"></span><br><span class="line">  <span class="selector-class">.scroll-area</span> &#123;<span class="comment">//滚动条出现的区域，此处为全屏</span></span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.fixed-header</span> &#123;<span class="comment">//头部固定</span></span><br><span class="line">      <span class="attribute">position</span>: fixed;</span><br><span class="line">      <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">z-index</span>: <span class="number">1000</span>;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">      <span class="attribute">background-color</span>: <span class="number">#FF852A</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.content</span> &#123;<span class="comment">//内容区域，即实际滚动区域</span></span><br><span class="line">      <span class="attribute">min-height</span>: <span class="number">100%</span>;</span><br><span class="line">      <span class="attribute">background-color</span>: <span class="number">#f4f4f4</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.tool-bar</span> &#123;<span class="comment">//底部工具条，也即tabBar</span></span><br><span class="line">      <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">      <span class="attribute">display</span>: flex;</span><br><span class="line">      <span class="attribute">position</span>: fixed;</span><br><span class="line">      <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">      <span class="attribute">z-index</span>: <span class="number">1001</span>;</span><br><span class="line">      <span class="attribute">background-color</span>: <span class="number">#ffffff</span>;</span><br><span class="line">      <span class="attribute">border-top</span>: <span class="number">1px</span> solid <span class="number">#e7e7e7</span>;</span><br><span class="line">      <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#f8f8f8</span>;</span><br><span class="line">      <span class="attribute">justify-content</span>: space-between;</span><br><span class="line">      <span class="attribute">align-items</span>: center;</span><br><span class="line">      <span class="attribute">padding</span>: <span class="number">2px</span> <span class="number">20px</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.rxjava.org/2018/12/21/weixin-share/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -317,7 +459,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/12/21/weixin-share/" class="post-title-link" itemprop="https://www.rxjava.org/index.html">微信分享接口测试</a>
+                <a href="/2018/12/21/weixin-share/" class="post-title-link" itemprop="url">微信分享接口测试</a>
               
             
           </h1>
@@ -470,7 +612,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/12/20/spring-validate-annotation/" class="post-title-link" itemprop="https://www.rxjava.org/index.html">Spring校验注解</a>
+                <a href="/2018/12/20/spring-validate-annotation/" class="post-title-link" itemprop="url">Spring校验注解</a>
               
             
           </h1>
@@ -717,7 +859,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/12/20/sql-lock/" class="post-title-link" itemprop="https://www.rxjava.org/index.html">数据库-悲观锁和乐观锁</a>
+                <a href="/2018/12/20/sql-lock/" class="post-title-link" itemprop="url">数据库-悲观锁和乐观锁</a>
               
             
           </h1>
@@ -864,7 +1006,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/12/19/temp-file/" class="post-title-link" itemprop="https://www.rxjava.org/index.html">创建临时文件</a>
+                <a href="/2018/12/19/temp-file/" class="post-title-link" itemprop="url">创建临时文件</a>
               
             
           </h1>
@@ -1017,7 +1159,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/12/10/with-note/" class="post-title-link" itemprop="https://www.rxjava.org/index.html">java项目启动时无法加载主类</a>
+                <a href="/2018/12/10/with-note/" class="post-title-link" itemprop="url">java项目启动时无法加载主类</a>
               
             
           </h1>
@@ -1180,7 +1322,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1385,6 +1527,7 @@
   
 
   
+
   
 
   

@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="参数名称 类型 必须     @AssertFalse Boolean,boolean 验证注解的元素值是false   @AssertTrue Boolean,boolean 验证注解的元素值是true   @NotNull 任意类型 验证注解的元素值不是null   @Null 任意类型 验证注解的元素值是null   @Min(value=值) BigDecimal，BigIntege">
+  <meta name="description" content="1.更新对象，为保证原子性，均使用Update/**  更新商品最低价和最高价*/@Overridepublic Mono updateMinAndMaxSalePrice(String tenantId, String id, long minSalePrice, long maxSalePrice) { Query query = Query.query(where(“id”).is(id).">
 <meta name="keywords" content="rxjava">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spring校验注解">
-<meta property="og:url" content="https://www.rxjava.org/2018/12/20/spring-validate-annotation/index.html">
+<meta property="og:title" content="原子更新和聚合查询">
+<meta property="og:url" content="https://www.rxjava.org/2019/02/12/sql-atomic/index.html">
 <meta property="og:site_name" content="RxJava小站">
-<meta property="og:description" content="参数名称 类型 必须     @AssertFalse Boolean,boolean 验证注解的元素值是false   @AssertTrue Boolean,boolean 验证注解的元素值是true   @NotNull 任意类型 验证注解的元素值不是null   @Null 任意类型 验证注解的元素值是null   @Min(value=值) BigDecimal，BigIntege">
+<meta property="og:description" content="1.更新对象，为保证原子性，均使用Update/**  更新商品最低价和最高价*/@Overridepublic Mono updateMinAndMaxSalePrice(String tenantId, String id, long minSalePrice, long maxSalePrice) { Query query = Query.query(where(“id”).is(id).">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-20T02:47:52.999Z">
+<meta property="og:updated_time" content="2019-02-12T02:25:34.217Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spring校验注解">
-<meta name="twitter:description" content="参数名称 类型 必须     @AssertFalse Boolean,boolean 验证注解的元素值是false   @AssertTrue Boolean,boolean 验证注解的元素值是true   @NotNull 任意类型 验证注解的元素值不是null   @Null 任意类型 验证注解的元素值是null   @Min(value=值) BigDecimal，BigIntege">
+<meta name="twitter:title" content="原子更新和聚合查询">
+<meta name="twitter:description" content="1.更新对象，为保证原子性，均使用Update/**  更新商品最低价和最高价*/@Overridepublic Mono updateMinAndMaxSalePrice(String tenantId, String id, long minSalePrice, long maxSalePrice) { Query query = Query.query(where(“id”).is(id).">
 
 
 
 
 
 
-  <link rel="canonical" href="https://www.rxjava.org/2018/12/20/spring-validate-annotation/">
+  <link rel="canonical" href="https://www.rxjava.org/2019/02/12/sql-atomic/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>Spring校验注解 | RxJava小站</title>
+  <title>原子更新和聚合查询 | RxJava小站</title>
   
 
 
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.rxjava.org/2018/12/20/spring-validate-annotation/">
+    <link itemprop="mainEntityOfPage" href="https://www.rxjava.org/2019/02/12/sql-atomic/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Happy">
@@ -310,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Spring校验注解
+          <h1 class="post-title" itemprop="name headline">原子更新和聚合查询
 
               
             
@@ -336,7 +336,7 @@
                 
               
 
-              <time title="创建时间：2018-12-20 09:47:23 / 修改时间：10:47:52" itemprop="dateCreated datePublished" datetime="2018-12-20T09:47:23+08:00">2018-12-20</time>
+              <time title="创建时间：2019-02-12 10:23:30 / 修改时间：10:25:34" itemprop="dateCreated datePublished" datetime="2019-02-12T10:23:30+08:00">2019-02-12</time>
             
 
             
@@ -375,112 +375,36 @@
       
 
       
-        <table>
-<thead>
-<tr>
-<th>参数名称</th>
-<th>类型</th>
-<th>必须</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>@AssertFalse</td>
-<td>Boolean,boolean</td>
-<td>验证注解的元素值是false</td>
-</tr>
-<tr>
-<td>@AssertTrue</td>
-<td>Boolean,boolean</td>
-<td>验证注解的元素值是true</td>
-</tr>
-<tr>
-<td>@NotNull</td>
-<td>任意类型</td>
-<td>验证注解的元素值不是null</td>
-</tr>
-<tr>
-<td>@Null</td>
-<td>任意类型</td>
-<td>验证注解的元素值是null</td>
-</tr>
-<tr>
-<td>@Min(value=值)</td>
-<td>BigDecimal，BigInteger, byte,short, int, long，等任何Number或CharSequence（存储的是数字）子类型</td>
-<td>验证注解的元素值大于等于@Min指定的value值</td>
-</tr>
-<tr>
-<td>@Max（value=值）</td>
-<td>和@Min要求一样</td>
-<td>验证注解的元素值小于等于@Max指定的value值</td>
-</tr>
-<tr>
-<td>@DecimalMin(value=值)</td>
-<td>和@Min要求一样</td>
-<td>验证注解的元素值大于等于@ DecimalMin指定的value值</td>
-</tr>
-<tr>
-<td>@DecimalMax(value=值)</td>
-<td>和@Min要求一样</td>
-<td>验证注解的元素值小于等于@ DecimalMax指定的value值</td>
-</tr>
-<tr>
-<td>@Digits(integer=整数位数, fraction=小数位数)</td>
-<td>和@Min要求一样</td>
-<td>验证注解的元素值的整数位数和小数位数上限</td>
-</tr>
-<tr>
-<td>@Size(min=下限, max=上限)</td>
-<td>字符串、Collection、Map、数组等</td>
-<td>验证注解的元素值的在min和max（包含）指定区间之内，如字符长度、集合大小</td>
-</tr>
-<tr>
-<td>@Past</td>
-<td>java.util.Date,java.util.Calendar;Joda Time类库的日期类型</td>
-<td>验证注解的元素值（日期类型）比当前时间早</td>
-</tr>
-<tr>
-<td>@Future</td>
-<td>与@Past要求一样</td>
-<td>验证注解的元素值（日期类型）比当前时间晚</td>
-</tr>
-<tr>
-<td>@NotBlank</td>
-<td>CharSequence子类型</td>
-<td>验证注解的元素值不为空（不为null、去除首位空格后长度为0），不同于@NotEmpty，@NotBlank只应用于字符串且在比较时会去除字符串的首位空格</td>
-</tr>
-<tr>
-<td>@Length(min=下限, max=上限)</td>
-<td>CharSequence子类型</td>
-<td>验证注解的元素值长度在min和max区间内</td>
-</tr>
-<tr>
-<td>@NotEmpty</td>
-<td>CharSequence子类型、Collection、Map、数组</td>
-<td>验证注解的元素值不为null且不为空（字符串长度不为0、集合大小不为0）</td>
-</tr>
-<tr>
-<td>@Range(min=最小值, max=最大值)</td>
-<td>BigDecimal,BigInteger,CharSequence, byte, short, int, long等原子类型和包装类型</td>
-<td>验证注解的元素值在最小值和最大值之间</td>
-</tr>
-<tr>
-<td>@Email(regexp=正则表达式,flag=标志的模式)</td>
-<td>CharSequence子类型（如String）</td>
-<td>验证注解的元素值是Email，也可以通过regexp和flag指定自定义的email格式</td>
-</tr>
-<tr>
-<td>@Pattern(regexp=正则表达式,flag=标志的模式)</td>
-<td>String，任何CharSequence的子类型</td>
-<td>验证注解的元素值与指定的正则表达式匹配</td>
-</tr>
-<tr>
-<td>@Valid</td>
-<td>任何非原子类型</td>
-<td>指定递归验证关联的对象；如用户对象中有个地址对象属性，如果想在验证用户对象时一起验证地址对象的话，在地址对象上加@Valid注解即可级联验证</td>
-</tr>
-</tbody>
-</table>
+        <p>1.更新对象，为保证原子性，均使用Update<br>/**</p>
+<ul>
+<li>更新商品最低价和最高价<br>*/<br>@Override<br>public Mono<boolean> updateMinAndMaxSalePrice(String tenantId, String id, long minSalePrice, long maxSalePrice) {<br> Query query = Query.query(where(“id”).is(id).and(“tenantId”).is(tenantId));<br> return reactiveMongoTemplate<pre><code>.updateFirst(
+        query,
+        Update.update(&quot;minSalePrice&quot;, minSalePrice).set(&quot;maxSalePrice&quot;, maxSalePrice),
+        Goods.class
+).map(UpdateResult::wasAcknowledged);
+</code></pre>}</boolean></li>
+</ul>
+<p>2.聚合查询：<br>/**</p>
+<ul>
+<li>查询指定商品评分和评分人数<br>*/<br>@Override<br>public Mono<goodsratingmodel> countRating(String goodsId, String tenantId) {<br> TypedAggregation<rating> ratingTypedAggregation = Aggregation.newAggregation(<pre><code>Rating.class,//查询实体
+Aggregation.match(Criteria.where(&quot;id&quot;).ne(null).and(&quot;goodsId&quot;).is(goodsId).and(&quot;tenantId&quot;).is(tenantId)),//查询条件
+Aggregation.project(&quot;goodsScroe&quot;),//查询后需要包含的字段
+Aggregation.group()//创建一个新的实例对象使用project中给定的字段
+        .count()//统计match查询出来的实体对象数
+        .as(&quot;shopScore&quot;)//将count出来的数存入实体指定字段，此处将评分人数存入
+        .sum(&quot;goodsScroe&quot;)//表达式计算指定字段值得和
+        .as(&quot;goodsScroe&quot;)//将和存入指定字段
+</code></pre> );<br> return reactiveMongoTemplate<pre><code>.aggregate(ratingTypedAggregation, Rating.class)
+.single()//只取第一个查询到对象
+.onErrorResume(t -&gt; t instanceof NoSuchElementException, r -&gt; Mono.just(new Rating()))
+.map(r -&gt; {
+    GoodsRatingModel goodsRatingModel = new GoodsRatingModel();
+    goodsRatingModel.setRatingTotalNum(r.getGoodsScroe());
+    goodsRatingModel.setRatingUserNum(r.getShopScore());
+    return goodsRatingModel;
+});
+</code></pre>}</rating></goodsratingmodel></li>
+</ul>
 
       
     </div>
@@ -511,8 +435,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/20/sql-lock/" rel="next" title="数据库-悲观锁和乐观锁">
-                <i class="fa fa-chevron-left"></i> 数据库-悲观锁和乐观锁
+              <a href="/2018/12/30/top-center-bottom/" rel="next" title="上中下结构布局，中间滚动">
+                <i class="fa fa-chevron-left"></i> 上中下结构布局，中间滚动
               </a>
             
           </div>
@@ -520,10 +444,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/21/weixin-share/" rel="prev" title="微信分享接口测试">
-                微信分享接口测试 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="1.更新对象，为保证原子性，均使用Update/**  更新商品最低价和最高价*/@Overridepublic Mono updateMinAndMaxSalePrice(String tenantId, String id, long minSalePrice, long maxSalePrice) { Query query = Query.query(where(“id”).is(id).">
+  <meta name="description" content="1.更新对象，为保证原子性，均使用Update 12345678910111213/** * 更新商品最低价和最高价 */@Overridepublic Mono&amp;lt;Boolean&amp;gt; updateMinAndMaxSalePrice(String tenantId, String id, long minSalePrice, long maxSalePrice) &amp;#123;    Qu">
 <meta name="keywords" content="rxjava">
 <meta property="og:type" content="article">
 <meta property="og:title" content="原子更新和聚合查询">
 <meta property="og:url" content="https://www.rxjava.org/2019/02/12/sql-atomic/index.html">
 <meta property="og:site_name" content="RxJava小站">
-<meta property="og:description" content="1.更新对象，为保证原子性，均使用Update/**  更新商品最低价和最高价*/@Overridepublic Mono updateMinAndMaxSalePrice(String tenantId, String id, long minSalePrice, long maxSalePrice) { Query query = Query.query(where(“id”).is(id).">
+<meta property="og:description" content="1.更新对象，为保证原子性，均使用Update 12345678910111213/** * 更新商品最低价和最高价 */@Overridepublic Mono&amp;lt;Boolean&amp;gt; updateMinAndMaxSalePrice(String tenantId, String id, long minSalePrice, long maxSalePrice) &amp;#123;    Qu">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-12T02:25:34.217Z">
+<meta property="og:updated_time" content="2019-02-12T02:29:01.841Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原子更新和聚合查询">
-<meta name="twitter:description" content="1.更新对象，为保证原子性，均使用Update/**  更新商品最低价和最高价*/@Overridepublic Mono updateMinAndMaxSalePrice(String tenantId, String id, long minSalePrice, long maxSalePrice) { Query query = Query.query(where(“id”).is(id).">
+<meta name="twitter:description" content="1.更新对象，为保证原子性，均使用Update 12345678910111213/** * 更新商品最低价和最高价 */@Overridepublic Mono&amp;lt;Boolean&amp;gt; updateMinAndMaxSalePrice(String tenantId, String id, long minSalePrice, long maxSalePrice) &amp;#123;    Qu">
 
 
 
@@ -336,7 +336,7 @@
                 
               
 
-              <time title="创建时间：2019-02-12 10:23:30 / 修改时间：10:25:34" itemprop="dateCreated datePublished" datetime="2019-02-12T10:23:30+08:00">2019-02-12</time>
+              <time title="创建时间：2019-02-12 10:23:30 / 修改时间：10:29:01" itemprop="dateCreated datePublished" datetime="2019-02-12T10:23:30+08:00">2019-02-12</time>
             
 
             
@@ -375,37 +375,10 @@
       
 
       
-        <p>1.更新对象，为保证原子性，均使用Update<br>/**</p>
-<ul>
-<li>更新商品最低价和最高价<br>*/<br>@Override<br>public Mono<boolean> updateMinAndMaxSalePrice(String tenantId, String id, long minSalePrice, long maxSalePrice) {<br> Query query = Query.query(where(“id”).is(id).and(“tenantId”).is(tenantId));<br> return reactiveMongoTemplate<pre><code>.updateFirst(
-        query,
-        Update.update(&quot;minSalePrice&quot;, minSalePrice).set(&quot;maxSalePrice&quot;, maxSalePrice),
-        Goods.class
-).map(UpdateResult::wasAcknowledged);
-</code></pre>}</boolean></li>
-</ul>
-<p>2.聚合查询：<br>/**</p>
-<ul>
-<li>查询指定商品评分和评分人数<br>*/<br>@Override<br>public Mono<goodsratingmodel> countRating(String goodsId, String tenantId) {<br> TypedAggregation<rating> ratingTypedAggregation = Aggregation.newAggregation(<pre><code>Rating.class,//查询实体
-Aggregation.match(Criteria.where(&quot;id&quot;).ne(null).and(&quot;goodsId&quot;).is(goodsId).and(&quot;tenantId&quot;).is(tenantId)),//查询条件
-Aggregation.project(&quot;goodsScroe&quot;),//查询后需要包含的字段
-Aggregation.group()//创建一个新的实例对象使用project中给定的字段
-        .count()//统计match查询出来的实体对象数
-        .as(&quot;shopScore&quot;)//将count出来的数存入实体指定字段，此处将评分人数存入
-        .sum(&quot;goodsScroe&quot;)//表达式计算指定字段值得和
-        .as(&quot;goodsScroe&quot;)//将和存入指定字段
-</code></pre> );<br> return reactiveMongoTemplate<pre><code>.aggregate(ratingTypedAggregation, Rating.class)
-.single()//只取第一个查询到对象
-.onErrorResume(t -&gt; t instanceof NoSuchElementException, r -&gt; Mono.just(new Rating()))
-.map(r -&gt; {
-    GoodsRatingModel goodsRatingModel = new GoodsRatingModel();
-    goodsRatingModel.setRatingTotalNum(r.getGoodsScroe());
-    goodsRatingModel.setRatingUserNum(r.getShopScore());
-    return goodsRatingModel;
-});
-</code></pre>}</rating></goodsratingmodel></li>
-</ul>
-
+        <p>1.更新对象，为保证原子性，均使用Update</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 更新商品最低价和最高价</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Mono&lt;Boolean&gt; <span class="title">updateMinAndMaxSalePrice</span><span class="params">(String tenantId, String id, <span class="keyword">long</span> minSalePrice, <span class="keyword">long</span> maxSalePrice)</span> </span>&#123;</span><br><span class="line">    Query query = Query.query(where(<span class="string">"id"</span>).is(id).and(<span class="string">"tenantId"</span>).is(tenantId));</span><br><span class="line">    <span class="keyword">return</span> reactiveMongoTemplate</span><br><span class="line">            .updateFirst(</span><br><span class="line">                    query,</span><br><span class="line">                    Update.update(<span class="string">"minSalePrice"</span>, minSalePrice).set(<span class="string">"maxSalePrice"</span>, maxSalePrice),</span><br><span class="line">                    Goods.class</span><br><span class="line">            ).map(UpdateResult::wasAcknowledged);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.聚合查询：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 查询指定商品评分和评分人数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Mono&lt;GoodsRatingModel&gt; <span class="title">countRating</span><span class="params">(String goodsId, String tenantId)</span> </span>&#123;</span><br><span class="line">    TypedAggregation&lt;Rating&gt; ratingTypedAggregation = Aggregation.newAggregation(</span><br><span class="line">            Rating.class,<span class="comment">//查询实体</span></span><br><span class="line">            Aggregation.match(Criteria.where(<span class="string">"id"</span>).ne(<span class="keyword">null</span>).and(<span class="string">"goodsId"</span>).is(goodsId).and(<span class="string">"tenantId"</span>).is(tenantId)),<span class="comment">//查询条件</span></span><br><span class="line">            Aggregation.project(<span class="string">"goodsScroe"</span>),<span class="comment">//查询后需要包含的字段</span></span><br><span class="line">            Aggregation.group()<span class="comment">//创建一个新的实例对象使用project中给定的字段</span></span><br><span class="line">                    .count()<span class="comment">//统计match查询出来的实体对象数</span></span><br><span class="line">                    .as(<span class="string">"shopScore"</span>)<span class="comment">//将count出来的数存入实体指定字段，此处将评分人数存入</span></span><br><span class="line">                    .sum(<span class="string">"goodsScroe"</span>)<span class="comment">//表达式计算指定字段值得和</span></span><br><span class="line">                    .as(<span class="string">"goodsScroe"</span>)<span class="comment">//将和存入指定字段</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">return</span> reactiveMongoTemplate</span><br><span class="line">            .aggregate(ratingTypedAggregation, Rating.class)</span><br><span class="line">            .single()<span class="comment">//只取第一个查询到对象</span></span><br><span class="line">            .onErrorResume(t -&gt; t <span class="keyword">instanceof</span> NoSuchElementException, r -&gt; Mono.just(<span class="keyword">new</span> Rating()))</span><br><span class="line">            .map(r -&gt; &#123;</span><br><span class="line">                GoodsRatingModel goodsRatingModel = <span class="keyword">new</span> GoodsRatingModel();</span><br><span class="line">                goodsRatingModel.setRatingTotalNum(r.getGoodsScroe());</span><br><span class="line">                goodsRatingModel.setRatingUserNum(r.getShopScore());</span><br><span class="line">                <span class="keyword">return</span> goodsRatingModel;</span><br><span class="line">            &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 

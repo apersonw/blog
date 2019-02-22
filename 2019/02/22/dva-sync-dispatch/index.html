@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445.flex-container &amp;#123;//FLEX容器，最高容器  padding-top: 100px;  padding-bottom: 100px;  height: 100%;  display: flex;  justif">
+  <meta name="description" content="####跨越组件、模型的复杂的长流程的调用 可以利用一些特殊手段把流程延伸出来到组件里。比如说，我们通常在组件中dispatch一个action的时候，不会处理后续事情，但可以修改这个过程： 123456new Promise((resolve, reject) =&amp;gt; &amp;#123;  dispatch(&amp;#123; type: &apos;class/generator&apos;, payload: &amp;#12">
 <meta name="keywords" content="rxjava">
 <meta property="og:type" content="article">
-<meta property="og:title" content="上中下结构布局，中间滚动">
-<meta property="og:url" content="https://www.rxjava.org/2018/12/30/top-center-bottom/index.html">
+<meta property="og:title" content="dva-sync-dispatch">
+<meta property="og:url" content="https://www.rxjava.org/2019/02/22/dva-sync-dispatch/index.html">
 <meta property="og:site_name" content="RxJava小站">
-<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445.flex-container &amp;#123;//FLEX容器，最高容器  padding-top: 100px;  padding-bottom: 100px;  height: 100%;  display: flex;  justif">
+<meta property="og:description" content="####跨越组件、模型的复杂的长流程的调用 可以利用一些特殊手段把流程延伸出来到组件里。比如说，我们通常在组件中dispatch一个action的时候，不会处理后续事情，但可以修改这个过程： 123456new Promise((resolve, reject) =&amp;gt; &amp;#123;  dispatch(&amp;#123; type: &apos;class/generator&apos;, payload: &amp;#12">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-29T16:01:33.520Z">
+<meta property="og:updated_time" content="2019-02-22T03:00:19.934Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="上中下结构布局，中间滚动">
-<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445.flex-container &amp;#123;//FLEX容器，最高容器  padding-top: 100px;  padding-bottom: 100px;  height: 100%;  display: flex;  justif">
+<meta name="twitter:title" content="dva-sync-dispatch">
+<meta name="twitter:description" content="####跨越组件、模型的复杂的长流程的调用 可以利用一些特殊手段把流程延伸出来到组件里。比如说，我们通常在组件中dispatch一个action的时候，不会处理后续事情，但可以修改这个过程： 123456new Promise((resolve, reject) =&amp;gt; &amp;#123;  dispatch(&amp;#123; type: &apos;class/generator&apos;, payload: &amp;#12">
 
 
 
 
 
 
-  <link rel="canonical" href="https://www.rxjava.org/2018/12/30/top-center-bottom/">
+  <link rel="canonical" href="https://www.rxjava.org/2019/02/22/dva-sync-dispatch/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>上中下结构布局，中间滚动 | RxJava小站</title>
+  <title>dva-sync-dispatch | RxJava小站</title>
   
 
 
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.rxjava.org/2018/12/30/top-center-bottom/">
+    <link itemprop="mainEntityOfPage" href="https://www.rxjava.org/2019/02/22/dva-sync-dispatch/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Happy">
@@ -310,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">上中下结构布局，中间滚动
+          <h1 class="post-title" itemprop="name headline">dva-sync-dispatch
 
               
             
@@ -336,7 +336,7 @@
                 
               
 
-              <time title="创建时间：2018-12-30 00:00:28 / 修改时间：00:01:33" itemprop="dateCreated datePublished" datetime="2018-12-30T00:00:28+08:00">2018-12-30</time>
+              <time title="创建时间：2019-02-22 10:55:40 / 修改时间：11:00:19" itemprop="dateCreated datePublished" datetime="2019-02-22T10:55:40+08:00">2019-02-22</time>
             
 
             
@@ -375,7 +375,13 @@
       
 
       
-        <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> &#123;<span class="comment">//FLEX容器，最高容器</span></span><br><span class="line">  <span class="attribute">padding-top</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">padding-bottom</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line"></span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#f4f4f4</span>;<span class="comment">//此颜色一般跟content中的背景色一致</span></span><br><span class="line"></span><br><span class="line">  <span class="selector-class">.scroll-area</span> &#123;<span class="comment">//滚动条出现的区域，此处为全屏</span></span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.fixed-header</span> &#123;<span class="comment">//头部固定</span></span><br><span class="line">      <span class="attribute">position</span>: fixed;</span><br><span class="line">      <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">z-index</span>: <span class="number">1000</span>;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">      <span class="attribute">background-color</span>: <span class="number">#FF852A</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.content</span> &#123;<span class="comment">//内容区域，即实际滚动区域</span></span><br><span class="line">      <span class="attribute">min-height</span>: <span class="number">100%</span>;</span><br><span class="line">      <span class="attribute">background-color</span>: <span class="number">#f4f4f4</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.tool-bar</span> &#123;<span class="comment">//底部工具条，也即tabBar</span></span><br><span class="line">      <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">      <span class="attribute">display</span>: flex;</span><br><span class="line">      <span class="attribute">position</span>: fixed;</span><br><span class="line">      <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">      <span class="attribute">z-index</span>: <span class="number">1001</span>;</span><br><span class="line">      <span class="attribute">background-color</span>: <span class="number">#ffffff</span>;</span><br><span class="line">      <span class="attribute">border-top</span>: <span class="number">1px</span> solid <span class="number">#e7e7e7</span>;</span><br><span class="line">      <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#f8f8f8</span>;</span><br><span class="line">      <span class="attribute">justify-content</span>: space-between;</span><br><span class="line">      <span class="attribute">align-items</span>: center;</span><br><span class="line">      <span class="attribute">padding</span>: <span class="number">2px</span> <span class="number">20px</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>####跨越组件、模型的复杂的长流程的调用</p>
+<p>可以利用一些特殊手段把流程延伸出来到组件里。比如说，我们通常在组件中dispatch一个action的时候，不会处理后续事情，但可以修改这个过程：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  dispatch(&#123; <span class="attr">type</span>: <span class="string">'class/generator'</span>, <span class="attr">payload</span>: &#123; <span class="attr">data</span>: <span class="number">9527</span>, resolve, reject &#125; &#125;);</span><br><span class="line">&#125;)</span><br><span class="line">.then(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`after a long time, <span class="subst">$&#123;data&#125;</span> returns`</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>#####注意这里，我们是把resolve和reject传到action里面了，所以，只需在effect里面这样处理：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function *generator(payload:&#123;resolve,reject&#125;) &#123;</span><br><span class="line">  try &#123;</span><br><span class="line">    const result = yield call(service1);</span><br><span class="line">    yield put(&#123; type: &apos;service1Success&apos;, payload: result &#125;);</span><br><span class="line">    resolve(result);</span><br><span class="line">  &#125;</span><br><span class="line">  catch (error) &#123;</span><br><span class="line">    yield put(&#123; type: &apos;service1Fail&apos;, error &#125;);</span><br><span class="line">    reject(ex);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样，就实现了跨越组件、模型的复杂的长流程的调用。</p>
+
       
     </div>
 
@@ -405,8 +411,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/21/weixin-share/" rel="next" title="微信分享接口测试">
-                <i class="fa fa-chevron-left"></i> 微信分享接口测试
+              <a href="/2019/02/21/webflux-websocket/" rel="next" title="webflux-websocket">
+                <i class="fa fa-chevron-left"></i> webflux-websocket
               </a>
             
           </div>
@@ -414,10 +420,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/12/sql-atomic/" rel="prev" title="原子更新和聚合查询">
-                原子更新和聚合查询 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

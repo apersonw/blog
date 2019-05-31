@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>RabbitMq整合说明 | RxJava小站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、添加依赖1234&amp;lt;dependency&amp;gt;	&amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;	&amp;lt;artifactId&amp;gt;spring-boot-starter-amqp&amp;lt;/artifactId&amp;gt;&amp;lt;/dependency&amp;gt; 二、增加配置1234567891011121314151617181">
+<meta name="keywords" content="rxjava">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RabbitMq整合说明">
+<meta property="og:url" content="https://www.rxjava.org/2019/05/31/rabbitmq/index.html">
+<meta property="og:site_name" content="RxJava小站">
+<meta property="og:description" content="一、添加依赖1234&amp;lt;dependency&amp;gt;	&amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;	&amp;lt;artifactId&amp;gt;spring-boot-starter-amqp&amp;lt;/artifactId&amp;gt;&amp;lt;/dependency&amp;gt; 二、增加配置1234567891011121314151617181">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-05-31T10:17:20.449Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RabbitMq整合说明">
+<meta name="twitter:description" content="一、添加依赖1234&amp;lt;dependency&amp;gt;	&amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;	&amp;lt;artifactId&amp;gt;spring-boot-starter-amqp&amp;lt;/artifactId&amp;gt;&amp;lt;/dependency&amp;gt; 二、增加配置1234567891011121314151617181">
+  
+    <link rel="alternate" href="/atom.xml" title="RxJava小站" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">RxJava小站</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">不和癞蛤蟆谈论大海的故事！</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://www.rxjava.org"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-rabbitmq" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/31/rabbitmq/" class="article-date">
+  <time datetime="2019-05-31T09:31:02.000Z" itemprop="datePublished">2019-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      RabbitMq整合说明
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一、添加依赖<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-amqp<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>二、增加配置<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">rabbitmq:</span></span><br><span class="line"><span class="attr">  host:</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">5672</span></span><br><span class="line"><span class="attr">  username:</span> <span class="string">admin</span></span><br><span class="line"><span class="attr">  password:</span> <span class="string">admin</span></span><br><span class="line"><span class="attr">  listener:</span></span><br><span class="line"><span class="attr">    simple:</span></span><br><span class="line"><span class="attr">      concurrency:</span> <span class="number">10</span> <span class="comment">#并发数</span></span><br><span class="line"><span class="attr">      max-concurrency:</span> <span class="number">10</span> <span class="comment">#最大并发数</span></span><br><span class="line"><span class="attr">      prefetch:</span> <span class="number">1</span> <span class="comment">#预取数</span></span><br><span class="line"><span class="attr">      default-requeue-rejected:</span> <span class="literal">true</span> <span class="comment">#默认情况下，重新获取队列，拒绝</span></span><br><span class="line"><span class="attr">      auto-startup:</span> <span class="literal">true</span> <span class="comment">#自动启动</span></span><br><span class="line"><span class="attr">    template:</span></span><br><span class="line"><span class="attr">      retry:</span></span><br><span class="line"><span class="attr">        enabled:</span> <span class="literal">true</span> <span class="comment">#重试开启</span></span><br><span class="line"><span class="attr">        initial-interval:</span> <span class="number">1000</span> <span class="comment">#初始间隔</span></span><br><span class="line"><span class="attr">        max-attempts:</span> <span class="number">3</span> <span class="comment">#最大尝试次数</span></span><br><span class="line"><span class="attr">        max-interval:</span> <span class="number">10000</span> <span class="comment">#最大间隔</span></span><br><span class="line"><span class="attr">        multiplier:</span> <span class="number">1.0</span> <span class="comment">#乘数</span></span><br></pre></td></tr></table></figure></p>
+<p>三、三种模式<br>1、direct模式交换机(exchange)模式</p>
+<ul>
+<li>创建消息队列<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.amqp.core.Queue;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MQConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String QUEUE_NAME = <span class="string">"queue"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Queue <span class="title">queue</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//第一个参数是队列名  第二是是否持久化</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Queue(QUEUE_NAME,<span class="keyword">true</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>创建消息发送者<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.amqp.core.AmqpTemplate;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MQSender</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span>  AmqpTemplate amqpTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">send</span><span class="params">(String msg)</span></span>&#123;</span><br><span class="line">        amqpTemplate.convertAndSend(MQConfig.QUEUE_NAME,msg);</span><br><span class="line">        System.out.println(<span class="string">"send message:"</span>+msg);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>创建消息接收者<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.amqp.rabbit.annotation.RabbitListener;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MQReceiver</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RabbitListener</span>(queues = MQConfig.QUEUE_NAME)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">receiver</span><span class="params">(String message)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"receiveMessage:"</span>+message);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>2、Topic模式交换机(exchange)模式</p>
+<ul>
+<li><p>创建消息队列</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * topic 模式</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Queue <span class="title">topicQueue1</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Queue(<span class="string">"topic.queue1"</span>,<span class="keyword">true</span>);<span class="comment">//第一个参数是队列名  第二是是否持久化</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Queue <span class="title">topicQueue2</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Queue(<span class="string">"topic.queue2"</span>,<span class="keyword">true</span>);<span class="comment">//第一个参数是队列名  第二是是否持久化</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> TopicExchange <span class="title">topicExchange</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> TopicExchange(<span class="string">"topicExchange"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Binding <span class="title">topicBinding</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> BindingBuilder.bind(topicQueue1()).to(topicExchange()).with(<span class="string">"topic.key1"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Binding <span class="title">topicBinding2</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> BindingBuilder.bind(topicQueue2()).to(topicExchange()).with(<span class="string">"topic.#"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 流程说明:我们先创建了两个queue 分别命名为 topic.queue1 和 topic.queue2 , 然后再创建一个交换机 命名为 topicExchang,最后将两个queue和交换机绑定,同时制定了匹配规则 ,"#"代表全部匹配</span></span><br><span class="line"><span class="comment"> * /</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建消息发送者</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.amqp.core.AmqpTemplate;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MQSender</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span>  AmqpTemplate amqpTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendTopic</span><span class="params">(String msg)</span></span>&#123;</span><br><span class="line">        amqpTemplate.convertAndSend(<span class="string">"topicExchange"</span>,<span class="string">"topic.key1"</span>,msg+<span class="string">"1"</span>);<span class="comment">//第一个参数代表交换机名 第二个代表满足匹配规则的表达式  第三个消息</span></span><br><span class="line">        amqpTemplate.convertAndSend(<span class="string">"topicExchange"</span>,<span class="string">"topic.key2"</span>,msg+<span class="string">"2"</span>);</span><br><span class="line">        System.out.println(<span class="string">"send message:"</span>+msg);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 我们在绑定交换机与queue时制定了匹配规则,"topic.key1"只能匹配"topic.key1","topic.#"可以匹配全部以"topic."开头的消息; 这样,第一条消息就会被 topic.queue1和 topic.queue2所匹配,而第二条只能被 topic.queue2匹配到</span></span><br><span class="line"><span class="comment"> * /</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建消息接收者</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RabbitListener</span>(queues = MQConfig.TOPIC_QUEUE_NAME1)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">receiverTopic1</span><span class="params">(String message)</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"receive topic queue1 message:"</span>+message);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RabbitListener</span>(queues = MQConfig.TOPIC_QUEUE_NAME2)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">receiverTopic2</span><span class="params">(String message)</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"receive topic queue2 message:"</span>+message);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>3、Fanout模式交换机(exchange)模式</p>
+<ul>
+<li><p>创建消息队列</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * fanout模式</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> FanoutExchange <span class="title">fanoutExchange</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> FanoutExchange(FANOUT_EXCHANGE);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Binding <span class="title">fanoutBinding1</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> BindingBuilder.bind(topicQueue1()).to(fanoutExchange());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Binding <span class="title">fanoutBinding2</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> BindingBuilder.bind(topicQueue2()).to(fanoutExchange());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建消息发送者</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendFanout</span><span class="params">(String msg)</span></span>&#123;</span><br><span class="line">    <span class="comment">//第一个参数代表交换机名，第三个消息</span></span><br><span class="line">    amqpTemplate.convertAndSend(<span class="string">"fanoutExchange"</span>,<span class="string">""</span>,msg);</span><br><span class="line">    System.out.println(<span class="string">"send fanout message:"</span>+msg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建消息接收者</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RabbitListener</span>(queues = MQConfig.TOPIC_QUEUE_NAME1)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">receiverTopic1</span><span class="params">(String message)</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"receive queue1 message:"</span>+message);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RabbitListener</span>(queues = MQConfig.TOPIC_QUEUE_NAME2)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">receiverTopic2</span><span class="params">(String message)</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"receive queue2 message:"</span>+message);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.rxjava.org/2019/05/31/rabbitmq/" data-id="cjwbx7qhe0001c5gbxuadpnj9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/02/22/dva-sync-dispatch/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">dva-sync-dispatch</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/31/rabbitmq/">RabbitMq整合说明</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/22/dva-sync-dispatch/">dva-sync-dispatch</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/21/webflux-websocket/">webflux-websocket</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/12/sql-atomic/">原子更新和聚合查询</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/30/top-center-bottom/">上中下结构布局，中间滚动</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Happy<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

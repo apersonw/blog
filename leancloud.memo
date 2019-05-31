@@ -8,4 +8,5 @@
 {"title":"原子更新和聚合查询","url":"/2019/02/12/sql-atomic/"},
 {"title":"webflux-websocket","url":"/2019/02/21/webflux-websocket/"},
 {"title":"dva-sync-dispatch","url":"/2019/02/22/dva-sync-dispatch/"},
+{"title":"RabbitMq整合说明","url":"/2019/05/31/rabbitmq/"},
 ]

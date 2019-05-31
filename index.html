@@ -1,101 +1,12 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next gemini use-motion" lang="zh-CN">
+<html>
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
-
-<link rel="stylesheet" href="/css/main.css?v=7.0.0">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.0">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=7.0.0" color="#222">
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '7.0.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
+  <meta charset="utf-8">
   
 
-
-
-
+  
+  <title>RxJava小站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="keywords" content="rxjava">
 <meta property="og:type" content="website">
 <meta property="og:title" content="RxJava小站">
@@ -104,929 +15,311 @@
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RxJava小站">
-
-
-
-
-
-
-  <link rel="canonical" href="https://www.rxjava.org/">
-
-
-
-<script id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
-
-  <title>RxJava小站</title>
   
-
-
-
-
-
-
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .motion-element,
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
-
-  .use-motion .logo,
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
+    <link rel="alternate" href="/atom.xml" title="RxJava小站" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
 </head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">RxJava小站</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">RxJava小站</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">不和癞蛤蟆谈论大海的故事！</a>
+        </h2>
+      
     </div>
-    
-      
-        <p class="site-subtitle">不和癞蛤蟆谈论大海的故事！</p>
-      
-    
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://www.rxjava.org"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-rabbitmq" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/31/rabbitmq/" class="article-date">
+  <time datetime="2019-05-31T09:31:02.000Z" itemprop="datePublished">2019-05-31</time>
+</a>
     
   </div>
-
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
         
-        
-        
-          
-          <li class="menu-item menu-item-home menu-item-active">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
-
-  </li>
-
-      
-      
-    </ul>
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/31/rabbitmq/">RabbitMq整合说明</a>
+    </h1>
   
 
-  
-
-  
-</nav>
-
-
-
-  
-
-
-
-</div>
-    </header>
-
-    
-
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-            
-
-          
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.rxjava.org/2019/02/22/dva-sync-dispatch/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Happy">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RxJava小站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/02/22/dva-sync-dispatch/" class="post-title-link" itemprop="url">dva-sync-dispatch</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-02-22 10:55:40 / 修改时间：11:00:19" itemprop="dateCreated datePublished" datetime="2019-02-22T10:55:40+08:00">2019-02-22</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-            <span id="/2019/02/22/dva-sync-dispatch/" class="leancloud_visitors" data-flag-title="dva-sync-dispatch">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一、添加依赖<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-amqp<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>二、增加配置<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">rabbitmq:</span></span><br><span class="line"><span class="attr">  host:</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">5672</span></span><br><span class="line"><span class="attr">  username:</span> <span class="string">admin</span></span><br><span class="line"><span class="attr">  password:</span> <span class="string">admin</span></span><br><span class="line"><span class="attr">  listener:</span></span><br><span class="line"><span class="attr">    simple:</span></span><br><span class="line"><span class="attr">      concurrency:</span> <span class="number">10</span> <span class="comment">#并发数</span></span><br><span class="line"><span class="attr">      max-concurrency:</span> <span class="number">10</span> <span class="comment">#最大并发数</span></span><br><span class="line"><span class="attr">      prefetch:</span> <span class="number">1</span> <span class="comment">#预取数</span></span><br><span class="line"><span class="attr">      default-requeue-rejected:</span> <span class="literal">true</span> <span class="comment">#默认情况下，重新获取队列，拒绝</span></span><br><span class="line"><span class="attr">      auto-startup:</span> <span class="literal">true</span> <span class="comment">#自动启动</span></span><br><span class="line"><span class="attr">    template:</span></span><br><span class="line"><span class="attr">      retry:</span></span><br><span class="line"><span class="attr">        enabled:</span> <span class="literal">true</span> <span class="comment">#重试开启</span></span><br><span class="line"><span class="attr">        initial-interval:</span> <span class="number">1000</span> <span class="comment">#初始间隔</span></span><br><span class="line"><span class="attr">        max-attempts:</span> <span class="number">3</span> <span class="comment">#最大尝试次数</span></span><br><span class="line"><span class="attr">        max-interval:</span> <span class="number">10000</span> <span class="comment">#最大间隔</span></span><br><span class="line"><span class="attr">        multiplier:</span> <span class="number">1.0</span> <span class="comment">#乘数</span></span><br></pre></td></tr></table></figure></p>
+<p>三、三种模式<br>1、direct模式交换机(exchange)模式</p>
+<ul>
+<li>创建消息队列<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.amqp.core.Queue;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MQConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String QUEUE_NAME = <span class="string">"queue"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Queue <span class="title">queue</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//第一个参数是队列名  第二是是否持久化</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Queue(QUEUE_NAME,<span class="keyword">true</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>创建消息发送者<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.amqp.core.AmqpTemplate;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MQSender</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span>  AmqpTemplate amqpTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">send</span><span class="params">(String msg)</span></span>&#123;</span><br><span class="line">        amqpTemplate.convertAndSend(MQConfig.QUEUE_NAME,msg);</span><br><span class="line">        System.out.println(<span class="string">"send message:"</span>+msg);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>创建消息接收者<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.amqp.rabbit.annotation.RabbitListener;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MQReceiver</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RabbitListener</span>(queues = MQConfig.QUEUE_NAME)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">receiver</span><span class="params">(String message)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"receiveMessage:"</span>+message);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>2、Topic模式交换机(exchange)模式</p>
+<ul>
+<li><p>创建消息队列</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * topic 模式</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Queue <span class="title">topicQueue1</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Queue(<span class="string">"topic.queue1"</span>,<span class="keyword">true</span>);<span class="comment">//第一个参数是队列名  第二是是否持久化</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Queue <span class="title">topicQueue2</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Queue(<span class="string">"topic.queue2"</span>,<span class="keyword">true</span>);<span class="comment">//第一个参数是队列名  第二是是否持久化</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> TopicExchange <span class="title">topicExchange</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> TopicExchange(<span class="string">"topicExchange"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Binding <span class="title">topicBinding</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> BindingBuilder.bind(topicQueue1()).to(topicExchange()).with(<span class="string">"topic.key1"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Binding <span class="title">topicBinding2</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> BindingBuilder.bind(topicQueue2()).to(topicExchange()).with(<span class="string">"topic.#"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 流程说明:我们先创建了两个queue 分别命名为 topic.queue1 和 topic.queue2 , 然后再创建一个交换机 命名为 topicExchang,最后将两个queue和交换机绑定,同时制定了匹配规则 ,"#"代表全部匹配</span></span><br><span class="line"><span class="comment"> * /</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建消息发送者</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.amqp.core.AmqpTemplate;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MQSender</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span>  AmqpTemplate amqpTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendTopic</span><span class="params">(String msg)</span></span>&#123;</span><br><span class="line">        amqpTemplate.convertAndSend(<span class="string">"topicExchange"</span>,<span class="string">"topic.key1"</span>,msg+<span class="string">"1"</span>);<span class="comment">//第一个参数代表交换机名 第二个代表满足匹配规则的表达式  第三个消息</span></span><br><span class="line">        amqpTemplate.convertAndSend(<span class="string">"topicExchange"</span>,<span class="string">"topic.key2"</span>,msg+<span class="string">"2"</span>);</span><br><span class="line">        System.out.println(<span class="string">"send message:"</span>+msg);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 我们在绑定交换机与queue时制定了匹配规则,"topic.key1"只能匹配"topic.key1","topic.#"可以匹配全部以"topic."开头的消息; 这样,第一条消息就会被 topic.queue1和 topic.queue2所匹配,而第二条只能被 topic.queue2匹配到</span></span><br><span class="line"><span class="comment"> * /</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建消息接收者</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RabbitListener</span>(queues = MQConfig.TOPIC_QUEUE_NAME1)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">receiverTopic1</span><span class="params">(String message)</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"receive topic queue1 message:"</span>+message);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RabbitListener</span>(queues = MQConfig.TOPIC_QUEUE_NAME2)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">receiverTopic2</span><span class="params">(String message)</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"receive topic queue2 message:"</span>+message);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>3、Fanout模式交换机(exchange)模式</p>
+<ul>
+<li><p>创建消息队列</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * fanout模式</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> FanoutExchange <span class="title">fanoutExchange</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> FanoutExchange(FANOUT_EXCHANGE);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Binding <span class="title">fanoutBinding1</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> BindingBuilder.bind(topicQueue1()).to(fanoutExchange());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Binding <span class="title">fanoutBinding2</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> BindingBuilder.bind(topicQueue2()).to(fanoutExchange());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建消息发送者</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendFanout</span><span class="params">(String msg)</span></span>&#123;</span><br><span class="line">    <span class="comment">//第一个参数代表交换机名，第三个消息</span></span><br><span class="line">    amqpTemplate.convertAndSend(<span class="string">"fanoutExchange"</span>,<span class="string">""</span>,msg);</span><br><span class="line">    System.out.println(<span class="string">"send fanout message:"</span>+msg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建消息接收者</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RabbitListener</span>(queues = MQConfig.TOPIC_QUEUE_NAME1)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">receiverTopic1</span><span class="params">(String message)</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"receive queue1 message:"</span>+message);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RabbitListener</span>(queues = MQConfig.TOPIC_QUEUE_NAME2)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">receiverTopic2</span><span class="params">(String message)</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"receive queue2 message:"</span>+message);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
 
       
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.rxjava.org/2019/05/31/rabbitmq/" data-id="cjwbx7qhe0001c5gbxuadpnj9" class="article-share-link">Share</a>
       
+      
+    </footer>
+  </div>
+  
+</article>
 
-      
+
+  
+    <article id="post-dva-sync-dispatch" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/22/dva-sync-dispatch/" class="article-date">
+  <time datetime="2019-02-22T02:55:40.000Z" itemprop="datePublished">2019-02-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
         
-          
-            <p>####跨越组件、模型的复杂的长流程的调用</p>
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/22/dva-sync-dispatch/">dva-sync-dispatch</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>####跨越组件、模型的复杂的长流程的调用</p>
 <p>可以利用一些特殊手段把流程延伸出来到组件里。比如说，我们通常在组件中dispatch一个action的时候，不会处理后续事情，但可以修改这个过程：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  dispatch(&#123; <span class="attr">type</span>: <span class="string">'class/generator'</span>, <span class="attr">payload</span>: &#123; <span class="attr">data</span>: <span class="number">9527</span>, resolve, reject &#125; &#125;);</span><br><span class="line">&#125;)</span><br><span class="line">.then(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`after a long time, <span class="subst">$&#123;data&#125;</span> returns`</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>#####注意这里，我们是把resolve和reject传到action里面了，所以，只需在effect里面这样处理：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function *generator(payload:&#123;resolve,reject&#125;) &#123;</span><br><span class="line">  try &#123;</span><br><span class="line">    const result = yield call(service1);</span><br><span class="line">    yield put(&#123; type: &apos;service1Success&apos;, payload: result &#125;);</span><br><span class="line">    resolve(result);</span><br><span class="line">  &#125;</span><br><span class="line">  catch (error) &#123;</span><br><span class="line">    yield put(&#123; type: &apos;service1Fail&apos;, error &#125;);</span><br><span class="line">    reject(ex);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这样，就实现了跨越组件、模型的复杂的长流程的调用。</p>
 
-          
-        
       
     </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
+    <footer class="article-footer">
+      <a data-url="https://www.rxjava.org/2019/02/22/dva-sync-dispatch/" data-id="cjwbx7qh90000c5gb1ant0oy0" class="article-share-link">Share</a>
       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+  
+    <article id="post-webflux-websocket" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/21/webflux-websocket/" class="article-date">
+  <time datetime="2019-02-21T10:40:59.000Z" itemprop="datePublished">2019-02-21</time>
+</a>
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.rxjava.org/2019/02/21/webflux-websocket/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Happy">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RxJava小站">
-    </span>
-
+  </div>
+  <div class="article-inner">
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/02/21/webflux-websocket/" class="post-title-link" itemprop="url">webflux-websocket</a>
-              
-            
-          </h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/21/webflux-websocket/">webflux-websocket</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-02-21 18:40:59" itemprop="dateCreated datePublished" datetime="2019-02-21T18:40:59+08:00">2019-02-21</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-02-22 10:49:47" itemprop="dateModified" datetime="2019-02-22T10:49:47+08:00">2019-02-22</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-            <span id="/2019/02/21/webflux-websocket/" class="leancloud_visitors" data-flag-title="webflux-websocket">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+    <div class="article-entry" itemprop="articleBody">
       
-      
-
-      
-        
-          
-            <p>SpringBoot2 WebFlux WebSocket Chat</p>
+        <p>SpringBoot2 WebFlux WebSocket Chat</p>
 <p>RxChatApplication.java</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.rxjava.services.chat;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.WebApplicationType;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.builder.SpringApplicationBuilder;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> happy 2019-02-16 10:55</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RxChatApplication</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">new</span> SpringApplicationBuilder(RxChatApplication.class).web(WebApplicationType.REACTIVE).run(args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>ReactiveWebSocketConfiguration.java</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.rxjava.services.chat;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.reactive.HandlerAdapter;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.reactive.HandlerMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.reactive.handler.SimpleUrlHandlerMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.reactive.socket.WebSocketHandler;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.reactive.socket.server.support.WebSocketHandlerAdapter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> happy 2019-02-18 02:28</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReactiveWebSocketConfiguration</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> WebSocketHandler webSocketHandler;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> HandlerMapping <span class="title">handlerMapping</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Map&lt;String, Object&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        map.put(<span class="string">"/websocket/chat"</span>, webSocketHandler);</span><br><span class="line">        SimpleUrlHandlerMapping handlerMapping = <span class="keyword">new</span> SimpleUrlHandlerMapping();</span><br><span class="line">        handlerMapping.setUrlMap(map);</span><br><span class="line">        handlerMapping.setOrder(<span class="number">10</span>);</span><br><span class="line">        <span class="keyword">return</span> handlerMapping;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> HandlerAdapter <span class="title">handlerAdapter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> WebSocketHandlerAdapter();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>ReactiveWebSocketHandler.java</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.rxjava.services.chat;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.core.JsonProcessingException;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.databind.ObjectMapper;</span><br><span class="line"><span class="keyword">import</span> com.google.common.cache.Cache;</span><br><span class="line"><span class="keyword">import</span> com.google.common.cache.CacheBuilder;</span><br><span class="line"><span class="keyword">import</span> org.rxjava.services.chat.form.EventForm;</span><br><span class="line"><span class="keyword">import</span> org.rxjava.services.chat.model.EventModel;</span><br><span class="line"><span class="keyword">import</span> org.rxjava.services.chat.type.EventType;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.reactive.socket.WebSocketHandler;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.reactive.socket.WebSocketMessage;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.reactive.socket.WebSocketSession;</span><br><span class="line"><span class="keyword">import</span> reactor.core.publisher.Flux;</span><br><span class="line"><span class="keyword">import</span> reactor.core.publisher.Mono;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.TimeUnit;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> happy 2019-02-18 02:11</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReactiveWebSocketHandler</span> <span class="keyword">implements</span> <span class="title">WebSocketHandler</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Cache&lt;String, WebSocketSession&gt; CACHE;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="comment">//最大4000，10分钟过期</span></span><br><span class="line">        CACHE = CacheBuilder.newBuilder().maximumSize(<span class="number">4000</span>).expireAfterAccess(<span class="number">10</span>, TimeUnit.MINUTES).build();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> ObjectMapper mapper;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ReactiveWebSocketHandler</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.mapper = <span class="keyword">new</span> ObjectMapper();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 握手</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Mono&lt;Void&gt; <span class="title">handle</span><span class="params">(WebSocketSession session)</span> </span>&#123;</span><br><span class="line">        Flux&lt;EventForm&gt; input = session</span><br><span class="line">                .receive()</span><br><span class="line">                .map(WebSocketMessage::getPayloadAsText)</span><br><span class="line">                .map(<span class="keyword">this</span>::toEventForm)</span><br><span class="line">                .doOnNext(form -&gt; &#123;</span><br><span class="line">                    <span class="keyword">if</span> (form.getType().equals(EventType.CHAT_MESSAGE)) &#123;</span><br><span class="line">                        WebSocketSession receiver = CACHE.getIfPresent(form.getReceiverId());</span><br><span class="line">                        <span class="keyword">if</span> (receiver != <span class="keyword">null</span>) &#123;</span><br><span class="line">                            receiver.send(Mono.just(form.getSenderId()).map(receiver::textMessage))</span><br><span class="line">                                    .subscribe(</span><br><span class="line">                                            next -&gt; CACHE.put(form.getReceiverId(), receiver),</span><br><span class="line">                                            Throwable::printStackTrace,</span><br><span class="line">                                            () -&gt; CACHE.invalidate(form.getReceiverId())</span><br><span class="line">                                    );</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">        <span class="keyword">return</span> input</span><br><span class="line">                .flatMap(form -&gt; &#123;</span><br><span class="line">                    <span class="comment">//保存token</span></span><br><span class="line">                    CACHE.put(form.getSenderId(), session);</span><br><span class="line">                    <span class="keyword">if</span> (form.getType().equals(EventType.USER_JOINED)) &#123;</span><br><span class="line">                        <span class="keyword">return</span> session.send(Mono.just(<span class="string">"成功连接webSocket"</span>).map(session::textMessage));</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">return</span> session.send(Mono.just(<span class="string">"发送消息呢"</span>).map(session::textMessage));</span><br><span class="line">                &#125;)</span><br><span class="line">                .then();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 转换为事件对象</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> EventForm <span class="title">toEventForm</span><span class="params">(String json)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> mapper.readValue(json, EventForm.class);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"Invalid JSON:"</span> + json, e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将事件对象转换为json</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">toJSON</span><span class="params">(EventModel event)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> mapper.writeValueAsString(event);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (JsonProcessingException e) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
       
     </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
+    <footer class="article-footer">
+      <a data-url="https://www.rxjava.org/2019/02/21/webflux-websocket/" data-id="cjwbx7qhk0007c5gbwjfa1diz" class="article-share-link">Share</a>
       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+  
+    <article id="post-sql-atomic" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/12/sql-atomic/" class="article-date">
+  <time datetime="2019-02-12T02:23:30.000Z" itemprop="datePublished">2019-02-12</time>
+</a>
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.rxjava.org/2019/02/12/sql-atomic/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Happy">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RxJava小站">
-    </span>
-
+  </div>
+  <div class="article-inner">
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/02/12/sql-atomic/" class="post-title-link" itemprop="url">原子更新和聚合查询</a>
-              
-            
-          </h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/12/sql-atomic/">原子更新和聚合查询</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-02-12 10:23:30 / 修改时间：10:29:01" itemprop="dateCreated datePublished" datetime="2019-02-12T10:23:30+08:00">2019-02-12</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-            <span id="/2019/02/12/sql-atomic/" class="leancloud_visitors" data-flag-title="原子更新和聚合查询">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+    <div class="article-entry" itemprop="articleBody">
       
-      
-
-      
-        
-          
-            <p>1.更新对象，为保证原子性，均使用Update</p>
+        <p>1.更新对象，为保证原子性，均使用Update</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 更新商品最低价和最高价</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Mono&lt;Boolean&gt; <span class="title">updateMinAndMaxSalePrice</span><span class="params">(String tenantId, String id, <span class="keyword">long</span> minSalePrice, <span class="keyword">long</span> maxSalePrice)</span> </span>&#123;</span><br><span class="line">    Query query = Query.query(where(<span class="string">"id"</span>).is(id).and(<span class="string">"tenantId"</span>).is(tenantId));</span><br><span class="line">    <span class="keyword">return</span> reactiveMongoTemplate</span><br><span class="line">            .updateFirst(</span><br><span class="line">                    query,</span><br><span class="line">                    Update.update(<span class="string">"minSalePrice"</span>, minSalePrice).set(<span class="string">"maxSalePrice"</span>, maxSalePrice),</span><br><span class="line">                    Goods.class</span><br><span class="line">            ).map(UpdateResult::wasAcknowledged);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>2.聚合查询：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 查询指定商品评分和评分人数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Mono&lt;GoodsRatingModel&gt; <span class="title">countRating</span><span class="params">(String goodsId, String tenantId)</span> </span>&#123;</span><br><span class="line">    TypedAggregation&lt;Rating&gt; ratingTypedAggregation = Aggregation.newAggregation(</span><br><span class="line">            Rating.class,<span class="comment">//查询实体</span></span><br><span class="line">            Aggregation.match(Criteria.where(<span class="string">"id"</span>).ne(<span class="keyword">null</span>).and(<span class="string">"goodsId"</span>).is(goodsId).and(<span class="string">"tenantId"</span>).is(tenantId)),<span class="comment">//查询条件</span></span><br><span class="line">            Aggregation.project(<span class="string">"goodsScroe"</span>),<span class="comment">//查询后需要包含的字段</span></span><br><span class="line">            Aggregation.group()<span class="comment">//创建一个新的实例对象使用project中给定的字段</span></span><br><span class="line">                    .count()<span class="comment">//统计match查询出来的实体对象数</span></span><br><span class="line">                    .as(<span class="string">"shopScore"</span>)<span class="comment">//将count出来的数存入实体指定字段，此处将评分人数存入</span></span><br><span class="line">                    .sum(<span class="string">"goodsScroe"</span>)<span class="comment">//表达式计算指定字段值得和</span></span><br><span class="line">                    .as(<span class="string">"goodsScroe"</span>)<span class="comment">//将和存入指定字段</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">return</span> reactiveMongoTemplate</span><br><span class="line">            .aggregate(ratingTypedAggregation, Rating.class)</span><br><span class="line">            .single()<span class="comment">//只取第一个查询到对象</span></span><br><span class="line">            .onErrorResume(t -&gt; t <span class="keyword">instanceof</span> NoSuchElementException, r -&gt; Mono.just(<span class="keyword">new</span> Rating()))</span><br><span class="line">            .map(r -&gt; &#123;</span><br><span class="line">                GoodsRatingModel goodsRatingModel = <span class="keyword">new</span> GoodsRatingModel();</span><br><span class="line">                goodsRatingModel.setRatingTotalNum(r.getGoodsScroe());</span><br><span class="line">                goodsRatingModel.setRatingUserNum(r.getShopScore());</span><br><span class="line">                <span class="keyword">return</span> goodsRatingModel;</span><br><span class="line">            &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
       
     </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
+    <footer class="article-footer">
+      <a data-url="https://www.rxjava.org/2019/02/12/sql-atomic/" data-id="cjwbx7qhg0003c5gbkmien1kl" class="article-share-link">Share</a>
       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+  
+    <article id="post-top-center-bottom" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/30/top-center-bottom/" class="article-date">
+  <time datetime="2018-12-29T16:00:28.000Z" itemprop="datePublished">2018-12-30</time>
+</a>
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.rxjava.org/2018/12/30/top-center-bottom/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Happy">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RxJava小站">
-    </span>
-
+  </div>
+  <div class="article-inner">
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/30/top-center-bottom/" class="post-title-link" itemprop="url">上中下结构布局，中间滚动</a>
-              
-            
-          </h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/30/top-center-bottom/">上中下结构布局，中间滚动</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-30 00:00:28 / 修改时间：00:01:33" itemprop="dateCreated datePublished" datetime="2018-12-30T00:00:28+08:00">2018-12-30</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-            <span id="/2018/12/30/top-center-bottom/" class="leancloud_visitors" data-flag-title="上中下结构布局，中间滚动">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+    <div class="article-entry" itemprop="articleBody">
       
-      
-
-      
-        
-          
-            <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> &#123;<span class="comment">//FLEX容器，最高容器</span></span><br><span class="line">  <span class="attribute">padding-top</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">padding-bottom</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line"></span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#f4f4f4</span>;<span class="comment">//此颜色一般跟content中的背景色一致</span></span><br><span class="line"></span><br><span class="line">  <span class="selector-class">.scroll-area</span> &#123;<span class="comment">//滚动条出现的区域，此处为全屏</span></span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.fixed-header</span> &#123;<span class="comment">//头部固定</span></span><br><span class="line">      <span class="attribute">position</span>: fixed;</span><br><span class="line">      <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">z-index</span>: <span class="number">1000</span>;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">      <span class="attribute">background-color</span>: <span class="number">#FF852A</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.content</span> &#123;<span class="comment">//内容区域，即实际滚动区域</span></span><br><span class="line">      <span class="attribute">min-height</span>: <span class="number">100%</span>;</span><br><span class="line">      <span class="attribute">background-color</span>: <span class="number">#f4f4f4</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.tool-bar</span> &#123;<span class="comment">//底部工具条，也即tabBar</span></span><br><span class="line">      <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">      <span class="attribute">display</span>: flex;</span><br><span class="line">      <span class="attribute">position</span>: fixed;</span><br><span class="line">      <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">      <span class="attribute">z-index</span>: <span class="number">1001</span>;</span><br><span class="line">      <span class="attribute">background-color</span>: <span class="number">#ffffff</span>;</span><br><span class="line">      <span class="attribute">border-top</span>: <span class="number">1px</span> solid <span class="number">#e7e7e7</span>;</span><br><span class="line">      <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#f8f8f8</span>;</span><br><span class="line">      <span class="attribute">justify-content</span>: space-between;</span><br><span class="line">      <span class="attribute">align-items</span>: center;</span><br><span class="line">      <span class="attribute">padding</span>: <span class="number">2px</span> <span class="number">20px</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
+        <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> &#123;<span class="comment">//FLEX容器，最高容器</span></span><br><span class="line">  <span class="attribute">padding-top</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">padding-bottom</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line"></span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#f4f4f4</span>;<span class="comment">//此颜色一般跟content中的背景色一致</span></span><br><span class="line"></span><br><span class="line">  <span class="selector-class">.scroll-area</span> &#123;<span class="comment">//滚动条出现的区域，此处为全屏</span></span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.fixed-header</span> &#123;<span class="comment">//头部固定</span></span><br><span class="line">      <span class="attribute">position</span>: fixed;</span><br><span class="line">      <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">z-index</span>: <span class="number">1000</span>;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">      <span class="attribute">background-color</span>: <span class="number">#FF852A</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.content</span> &#123;<span class="comment">//内容区域，即实际滚动区域</span></span><br><span class="line">      <span class="attribute">min-height</span>: <span class="number">100%</span>;</span><br><span class="line">      <span class="attribute">background-color</span>: <span class="number">#f4f4f4</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.tool-bar</span> &#123;<span class="comment">//底部工具条，也即tabBar</span></span><br><span class="line">      <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">      <span class="attribute">display</span>: flex;</span><br><span class="line">      <span class="attribute">position</span>: fixed;</span><br><span class="line">      <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">      <span class="attribute">z-index</span>: <span class="number">1001</span>;</span><br><span class="line">      <span class="attribute">background-color</span>: <span class="number">#ffffff</span>;</span><br><span class="line">      <span class="attribute">border-top</span>: <span class="number">1px</span> solid <span class="number">#e7e7e7</span>;</span><br><span class="line">      <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#f8f8f8</span>;</span><br><span class="line">      <span class="attribute">justify-content</span>: space-between;</span><br><span class="line">      <span class="attribute">align-items</span>: center;</span><br><span class="line">      <span class="attribute">padding</span>: <span class="number">2px</span> <span class="number">20px</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
+    <footer class="article-footer">
+      <a data-url="https://www.rxjava.org/2018/12/30/top-center-bottom/" data-id="cjwbx7qhj0006c5gbr77t6ujb" class="article-share-link">Share</a>
       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+  
+    <article id="post-weixin-share" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/21/weixin-share/" class="article-date">
+  <time datetime="2018-12-21T06:08:32.000Z" itemprop="datePublished">2018-12-21</time>
+</a>
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.rxjava.org/2018/12/21/weixin-share/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Happy">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RxJava小站">
-    </span>
-
+  </div>
+  <div class="article-inner">
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/21/weixin-share/" class="post-title-link" itemprop="url">微信分享接口测试</a>
-              
-            
-          </h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/21/weixin-share/">微信分享接口测试</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-21 14:08:32 / 修改时间：14:12:45" itemprop="dateCreated datePublished" datetime="2018-12-21T14:08:32+08:00">2018-12-21</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-            <span id="/2018/12/21/weixin-share/" class="leancloud_visitors" data-flag-title="微信分享接口测试">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+    <div class="article-entry" itemprop="articleBody">
       
-      
-
-      
-        
-          
-            <p>说明一：引入的相关类</p>
+        <p>说明一：引入的相关类</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.databind.JsonNode;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.codec.digest.DigestUtils;</span><br><span class="line"><span class="keyword">import</span> org.forkjoin.scrat.common.ErrorMessageException;</span><br><span class="line"><span class="keyword">import</span> org.junit.Before;</span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.junit4.SpringRunner;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.reactive.function.client.WebClient;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.util.UriComponentsBuilder;</span><br><span class="line"><span class="keyword">import</span> reactor.core.publisher.Mono;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">import</span> java.util.stream.Collectors;</span><br></pre></td></tr></table></figure>
 <p>说明二：使用的Spring webClient进行的网络请求</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> WebClient webClient;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Before</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    webClient = WebClient.builder().build();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -1039,159 +332,42 @@
 <p>四、对string进行sha1签名，得到signature</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMain</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    String noncestr = <span class="string">"zckkwiekaAERkqke"</span>;</span><br><span class="line">    <span class="keyword">long</span> timestamp = System.currentTimeMillis();</span><br><span class="line">    String url = <span class="string">"https://www.google.com"</span>;</span><br><span class="line">    String appid = <span class="string">"wx18029384838923d"</span>;<span class="comment">//假的，请自行填写自己的appid</span></span><br><span class="line">    String secret = <span class="string">"9kkeiekkdikdindiie82kndiidnnedie1"</span>;<span class="comment">//假的，请自行填写自己的secret</span></span><br><span class="line"></span><br><span class="line">    String signature = getAccessToken(appid, secret)</span><br><span class="line">            .flatMap(<span class="keyword">this</span>::getJsapiTicket)</span><br><span class="line">            .map(jsapiTicket -&gt; &#123;</span><br><span class="line">                Map&lt;String, String&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">                map.put(<span class="string">"noncestr"</span>, noncestr);</span><br><span class="line">                map.put(<span class="string">"jsapi_ticket"</span>, jsapiTicket);</span><br><span class="line">                map.put(<span class="string">"timestamp"</span>, String.valueOf(timestamp));</span><br><span class="line">                map.put(<span class="string">"url"</span>, url);</span><br><span class="line">                <span class="keyword">return</span> getSignToken(map);</span><br><span class="line">            &#125;)</span><br><span class="line">            .map(DigestUtils::sha1Hex)</span><br><span class="line">            .block();</span><br><span class="line">    System.out.println(signature);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
+    <footer class="article-footer">
+      <a data-url="https://www.rxjava.org/2018/12/21/weixin-share/" data-id="cjwbx7qhl0008c5gbucixklkz" class="article-share-link">Share</a>
       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+  
+    <article id="post-spring-validate-annotation" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/20/spring-validate-annotation/" class="article-date">
+  <time datetime="2018-12-20T01:47:23.000Z" itemprop="datePublished">2018-12-20</time>
+</a>
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.rxjava.org/2018/12/20/spring-validate-annotation/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Happy">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RxJava小站">
-    </span>
-
+  </div>
+  <div class="article-inner">
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/20/spring-validate-annotation/" class="post-title-link" itemprop="url">Spring校验注解</a>
-              
-            
-          </h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/20/spring-validate-annotation/">Spring校验注解</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-20 09:47:23 / 修改时间：10:47:52" itemprop="dateCreated datePublished" datetime="2018-12-20T09:47:23+08:00">2018-12-20</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-            <span id="/2018/12/20/spring-validate-annotation/" class="leancloud_visitors" data-flag-title="Spring校验注解">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+    <div class="article-entry" itemprop="articleBody">
       
-      
-
-      
-        
-          
-            <table>
+        <table>
 <thead>
 <tr>
 <th>参数名称</th>
@@ -1298,849 +474,230 @@
 </tbody>
 </table>
 
-          
-        
       
     </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
+    <footer class="article-footer">
+      <a data-url="https://www.rxjava.org/2018/12/20/spring-validate-annotation/" data-id="cjwbx7qhf0002c5gbidnspwqe" class="article-share-link">Share</a>
       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+  
+    <article id="post-sql-lock" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/20/sql-lock/" class="article-date">
+  <time datetime="2018-12-19T17:05:25.000Z" itemprop="datePublished">2018-12-20</time>
+</a>
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.rxjava.org/2018/12/20/sql-lock/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Happy">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RxJava小站">
-    </span>
-
+  </div>
+  <div class="article-inner">
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/20/sql-lock/" class="post-title-link" itemprop="url">数据库-悲观锁和乐观锁</a>
-              
-            
-          </h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/20/sql-lock/">数据库-悲观锁和乐观锁</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-20 01:05:25 / 修改时间：01:15:10" itemprop="dateCreated datePublished" datetime="2018-12-20T01:05:25+08:00">2018-12-20</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-            <span id="/2018/12/20/sql-lock/" class="leancloud_visitors" data-flag-title="数据库-悲观锁和乐观锁">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+    <div class="article-entry" itemprop="articleBody">
       
-      
-
-      
-        
-          
-            <p>一、乐观锁（在更新操作之前先进行数据的读取，如果在修改数据的时候发现数据已经被别的操作修改了，则抛出错误，否则执行成功）<br>假设我们有一个用户表user，它有三个字段:id、money、version，那么我们根据id来给money增加20值的一个乐观锁的实现步骤是这样的:<br>第一步，首先我们得到version值:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select version from user where id = #&#123;id&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>一、乐观锁（在更新操作之前先进行数据的读取，如果在修改数据的时候发现数据已经被别的操作修改了，则抛出错误，否则执行成功）<br>假设我们有一个用户表user，它有三个字段:id、money、version，那么我们根据id来给money增加20值的一个乐观锁的实现步骤是这样的:<br>第一步，首先我们得到version值:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select version from user where id = #&#123;id&#125;</span><br></pre></td></tr></table></figure></p>
 <p>。即我们首先得到当前的版本号。<br>第二步，然后我们执行更新操作:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> money = money + <span class="number">20</span>, <span class="keyword">version</span> = <span class="keyword">version</span> + <span class="number">1</span> <span class="keyword">where</span> <span class="keyword">id</span> = <span class="comment">#&#123;id&#125; and version = #&#123;version&#125;</span></span><br></pre></td></tr></table></figure></p>
 <p>，这里一定要带上版本信息，只有在它改之前没有被修改才能确保操作成功。<br>如果修改行数为0，说明别的更新操作把版本数version加上去了，我们需要重新读取version信息，重新执行更新操作。</p>
 <p>二、悲观锁（在读取的时候就加上独占锁）<br>假设我们有一个用户表user，它有两个字段:id、money，假设某个用户的money大于200，我们会用它减去200，这里我们在整个事务中需要给这个数据加独占锁，以避免两个事务都读取到money的值大于200，但是最后都减去200后，得到负数的情况。<br>第一步，首先我们给当前用户加锁:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> money <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> <span class="keyword">id</span> = <span class="comment">#&#123;id&#125; for update</span></span><br></pre></td></tr></table></figure></p>
 <p>，即我们首先获取到用户的金额，即我们需要确保它是有足够的钱消费的。<br>第二步，然后我们用这个值减去200:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> money = money - <span class="number">200</span> <span class="keyword">where</span> <span class="keyword">id</span> = <span class="comment">#&#123;id&#125;</span></span><br></pre></td></tr></table></figure></p>
 <p>，然后在事务结束后，我们就完成了整个操作。</p>
 
-          
-        
       
     </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
+    <footer class="article-footer">
+      <a data-url="https://www.rxjava.org/2018/12/20/sql-lock/" data-id="cjwbx7qhi0005c5gbhqeo9n0y" class="article-share-link">Share</a>
       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+  
+    <article id="post-temp-file" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/19/temp-file/" class="article-date">
+  <time datetime="2018-12-18T17:05:25.000Z" itemprop="datePublished">2018-12-19</time>
+</a>
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.rxjava.org/2018/12/19/temp-file/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Happy">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RxJava小站">
-    </span>
-
+  </div>
+  <div class="article-inner">
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/19/temp-file/" class="post-title-link" itemprop="url">创建临时文件</a>
-              
-            
-          </h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/19/temp-file/">创建临时文件</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-19 01:05:25" itemprop="dateCreated datePublished" datetime="2018-12-19T01:05:25+08:00">2018-12-19</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-12-20 01:20:12" itemprop="dateModified" datetime="2018-12-20T01:20:12+08:00">2018-12-20</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-            <span id="/2018/12/19/temp-file/" class="leancloud_visitors" data-flag-title="创建临时文件">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+    <div class="article-entry" itemprop="articleBody">
       
-      
-
-      
-        
-          
-            <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;      </span><br><span class="line">    File f = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">       <span class="comment">// 创建临时文件</span></span><br><span class="line">       f = File.createTempFile(<span class="string">"tmp"</span>, <span class="string">".txt"</span>, <span class="keyword">new</span> File(<span class="string">"C:/"</span>));</span><br><span class="line">       <span class="comment">// 输出绝对路径</span></span><br><span class="line">       System.out.println(<span class="string">"File path: "</span>+f.getAbsolutePath());</span><br><span class="line">       </span><br><span class="line">    &#125; <span class="keyword">catch</span>(Exception e) &#123;</span><br><span class="line">       <span class="comment">// 如果有错误输出内容</span></span><br><span class="line">       e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">       <span class="comment">// 终止后删除临时文件</span></span><br><span class="line">       <span class="keyword">if</span> (f != <span class="keyword">null</span>) &#123;</span><br><span class="line">           file.deleteOnExit();</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;      </span><br><span class="line">    File f = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">       <span class="comment">// 创建临时文件</span></span><br><span class="line">       f = File.createTempFile(<span class="string">"tmp"</span>, <span class="string">".txt"</span>, <span class="keyword">new</span> File(<span class="string">"C:/"</span>));</span><br><span class="line">       <span class="comment">// 输出绝对路径</span></span><br><span class="line">       System.out.println(<span class="string">"File path: "</span>+f.getAbsolutePath());</span><br><span class="line">       </span><br><span class="line">    &#125; <span class="keyword">catch</span>(Exception e) &#123;</span><br><span class="line">       <span class="comment">// 如果有错误输出内容</span></span><br><span class="line">       e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">       <span class="comment">// 终止后删除临时文件</span></span><br><span class="line">       <span class="keyword">if</span> (f != <span class="keyword">null</span>) &#123;</span><br><span class="line">           file.deleteOnExit();</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
+    <footer class="article-footer">
+      <a data-url="https://www.rxjava.org/2018/12/19/temp-file/" data-id="cjwbx7qhh0004c5gbyliv3vxr" class="article-share-link">Share</a>
       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+  
+    <article id="post-with-note" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/10/with-note/" class="article-date">
+  <time datetime="2018-12-09T17:05:25.000Z" itemprop="datePublished">2018-12-10</time>
+</a>
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.rxjava.org/2018/12/10/with-note/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Happy">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RxJava小站">
-    </span>
-
+  </div>
+  <div class="article-inner">
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/10/with-note/" class="post-title-link" itemprop="url">java项目启动时无法加载主类</a>
-              
-            
-          </h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/10/with-note/">java项目启动时无法加载主类</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-10 01:05:25" itemprop="dateCreated datePublished" datetime="2018-12-10T01:05:25+08:00">2018-12-10</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-12-20 01:15:10" itemprop="dateModified" datetime="2018-12-20T01:15:10+08:00">2018-12-20</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-            <span id="/2018/12/10/with-note/" class="leancloud_visitors" data-flag-title="java项目启动时无法加载主类">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+    <div class="article-entry" itemprop="articleBody">
       
-      
-
-      
-        
-          
-            <p>当你启动一个java项目时出现了这个：<br>错误: 找不到或无法加载主类</p>
+        <p>当你启动一个java项目时出现了这个：<br>错误: 找不到或无法加载主类</p>
 <p>则使用<br>mvn clean package -X<br>来打包一下项目，看到底是什么原因让自己没有办法加载了呢</p>
 
-          
-        
       
     </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
+    <footer class="article-footer">
+      <a data-url="https://www.rxjava.org/2018/12/10/with-note/" data-id="cjwbx7qhm0009c5gbqmtl9o03" class="article-share-link">Share</a>
       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-  
-  
-  </article>
+</article>
 
-
-    
-  </section>
 
   
 
 
-          </div>
-          
-
-        </div>
+</section>
         
-          
+          <aside id="sidebar">
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"></ul>
     </div>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+
+  
     
-    <div class="sidebar-inner">
 
-      
-
-      
-
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">Happy</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">9</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-
-              
-            </nav>
-          
-
-          
-
-          
-
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </div>
-
-      
-
-      
-
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li></ul>
     </div>
-  </aside>
+  </div>
 
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Happy</span>
 
   
-
-  
-</div>
-
-
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.0.0</div>
-
-
-
-
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
         
-
-
-
-
-
-
-
-
+          <li>
+            <a href="/2019/05/31/rabbitmq/">RabbitMq整合说明</a>
+          </li>
         
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
+          <li>
+            <a href="/2019/02/22/dva-sync-dispatch/">dva-sync-dispatch</a>
+          </li>
         
-      </div>
-    
-
-    
-
-    
-
-    
+          <li>
+            <a href="/2019/02/21/webflux-websocket/">webflux-websocket</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/12/sql-atomic/">原子更新和聚合查询</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/30/top-center-bottom/">上中下结构布局，中间滚动</a>
+          </li>
+        
+      </ul>
+    </div>
   </div>
 
   
-
-<script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</aside>
+        
+      </div>
+      <footer id="footer">
   
-  <script src="/lib/jquery/index.js?v=2.1.3"></script>
-
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Happy<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
   
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
+    <a href="/" class="mobile-nav-link">Home</a>
   
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-
+    <a href="/archives" class="mobile-nav-link">Archives</a>
   
-
-
-  <script src="/js/src/utils.js?v=7.0.0"></script>
-
-  <script src="/js/src/motion.js?v=7.0.0"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/src/affix.js?v=7.0.0"></script>
-
-  <script src="/js/src/schemes/pisces.js?v=7.0.0"></script>
-
-
-
-
-  
-
-  
-
-
-  <script src="/js/src/bootstrap.js?v=7.0.0"></script>
-
-
-
-  
-
-
-
-  
-
-
-
-
-  
-  
-  <script>
-    
-    function showTime(Counter) {
-      var entries = [];
-      var $visitors = $('.leancloud_visitors');
-
-      $visitors.each(function() {
-        entries.push( $(this).attr('id').trim() );
-      });
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { '$in': entries } }) })
-        .done(function({ results }) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for (var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if (countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function ({ responseJSON }) {
-          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
-        });
-    }
+</nav>
     
 
-    $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'eff3h0GKAuSCGhRporf3Dtqx-gzGzoHsz')
-        .done(function({ api_server }) {
-          var Counter = function(method, url, data) {
-            return $.ajax({
-              method: method,
-              url: 'https://' + api_server + '/1.1' + url,
-              headers: {
-                'X-LC-Id': 'eff3h0GKAuSCGhRporf3Dtqx-gzGzoHsz',
-                'X-LC-Key': '2dQ44bepQUdbJkXYWec3PajL',
-                'Content-Type': 'application/json',
-              },
-              data: data
-            });
-          };
-          
-            if ($('.post-title-link').length >= 1) {
-              showTime(Counter);
-            }
-          
-        });
-    });
-  </script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
 
 
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
+  </div>
 </body>
 </html>
